@@ -82,7 +82,7 @@ if __name__ == "__main__":
                       epochs=hp["epochs"],  validation_data=(X_attack_val, to_categorical(Y_attack_val, num_classes=classes)))
         model.save(save_root + "my_model_0.h5")
     else:
-        tf.keras.models.load_model(save_root +'my_model_0.h5')
+        model = tf.keras.models.load_model(save_root +'my_model_0.h5')
 
     GE, NTGE = evaluate(model, X_attack, plt_attack, correct_key, leakage_fn=leakage_fn, nb_attacks=100,
                         total_nb_traces_attacks=2000, nb_traces_attacks=100)
