@@ -15,7 +15,7 @@ if __name__ == "__main__":
     model_type = "cnn" #mlp, cnn
     leakage = "HW" #ID, HW
     train_models = True
-    epochs=50
+    epochs = 50
 
     seed = 0
     tf.random.set_seed(seed)
