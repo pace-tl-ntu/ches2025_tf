@@ -82,4 +82,4 @@ def cnn_random(classes, number_of_samples,regularization=False, hp = None):
 def get_optimizer(optimizer, learning_rate):
     module_name = importlib.import_module("tensorflow.keras.optimizers")
     optimizer_class = getattr(module_name, optimizer)
-    return optimizer_class(lr=learning_rate)
+    return optimizer_class(learning_rate=learning_rate)
