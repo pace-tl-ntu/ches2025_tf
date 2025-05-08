@@ -5,7 +5,6 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-
 from src.net import mlp_random, cnn_random, get_hyperparameters_mlp, get_hyperparemeters_cnn
 from src.utils import load_ctf_2025, AES_Sbox, evaluate
 
