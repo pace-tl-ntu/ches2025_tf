@@ -85,4 +85,4 @@ if __name__ == "__main__":
         tf.keras.models.load_model(save_root +'my_model_0.h5')
 
     GE, NTGE = evaluate(model, X_attack, plt_attack, correct_key, leakage_fn=leakage_fn, nb_attacks=100,
-                        total_nb_traces_attacks=2000, nb_traces_attacks=1700)
+                        total_nb_traces_attacks=2000, nb_traces_attacks=100)
