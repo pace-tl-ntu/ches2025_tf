@@ -15,6 +15,8 @@ if __name__ == "__main__":
     model_type = "mlp" #mlp, cnn
     leakage = "HW" #ID, HW
     train_models = True
+    epochs=50
+
     seed = 0
     tf.random.set_seed(seed)
     random.seed(seed)
@@ -75,7 +77,7 @@ if __name__ == "__main__":
         else:
             hp = get_hyperparemeters_cnn(regularization=regularization)
             model, seed, hp = cnn_random(classes, number_of_samples, regularization=regularization, hp=hp)
-
+        hp["epochs"] = epochs
         model.fit(x=X_profiling, y=to_categorical(Y_profiling, num_classes=classes), batch_size=hp["batch_size"], verbose=2,
                       epochs=hp["epochs"],  validation_data=(X_attack_val, to_categorical(Y_attack_val, num_classes=classes)))
         model.save(save_root + "my_model_0.h5")
