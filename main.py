@@ -12,7 +12,7 @@ from src.utils import load_ctf_2025, AES_Sbox, evaluate, calculate_HW
 if __name__ == "__main__":
     root = './'
     dataset = "CHES_2025"
-    model_type = "mlp" #mlp, cnn
+    model_type = "cnn" #mlp, cnn
     leakage = "HW" #ID, HW
     train_models = True
     epochs=50
