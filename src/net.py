@@ -20,7 +20,7 @@ def mlp_random(classes, number_of_samples, regularization=False, hp=None):
     tf_random_seed = np.random.randint(1048576)
     tf.random.set_seed(tf_random_seed)
 
-    inputs = Input(shape=number_of_samples)
+    inputs = Input(shape=(number_of_samples,))
     x = None
     for layer_index in range(hp["layers"]):
         if regularization and hp["regularization"] != "dropout":
