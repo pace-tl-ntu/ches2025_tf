@@ -7,7 +7,7 @@ from tensorflow.keras.utils import to_categorical
 from sklearn.preprocessing import StandardScaler
 from src.net import mlp_random, cnn_random
 from src.hyperparameters import get_hyperparameters_mlp, get_hyperparemeters_cnn
-from src.utils import load_ctf_2025, AES_Sbox, evaluate
+from src.utils import load_ctf_2025, AES_Sbox, evaluate, calculate_HW
 
 if __name__ == "__main__":
     root = './'
@@ -55,6 +55,8 @@ if __name__ == "__main__":
             hw = [bin(x).count("1") for x in range(256)]
             return hw[AES_Sbox[k ^ int(att_plt)]]
         classes = 9
+        Y_profiling = calculate_HW(Y_profiling)
+        Y_attack = calculate_HW(Y_attack)
 
     scaler_std = StandardScaler()
     X_profiling = scaler_std.fit_transform(X_profiling)
