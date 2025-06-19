@@ -42,8 +42,8 @@ if __name__ == "__main__":
         os.mkdir(model_root)
 
     if dataset == "CHES_2025":
-        byte = 2
-        data_root = './../Dataset/CHES_2025/CHES_Challenge_v0.h5' #change this to where you download your dataset.
+        byte = 0
+        data_root = './../Dataset/CHES_2025/CHES_Challenge.h5' #change this to where you download your dataset.
         (X_profiling, X_attack), (Y_profiling, Y_attack), (plt_profiling, plt_attack), correct_key = load_ctf_2025(
             data_root, leakage_model="ID", byte=byte, train_begin=0, train_end=45000, test_begin=0,
             test_end=10000)
